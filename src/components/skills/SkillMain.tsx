@@ -25,7 +25,7 @@ export type SkillsData = {
 
 const SkillMain = ({ skillsData }: { skillsData: SkillsData }) => {
   return (
-    <div id="skills" className="mt-[120px]">
+    <div id="skills" className="mt-[40px]">
       <div className="max-w-[1280px] px-4 mx-auto min-h-[600px] relative overflow-hidden">
         <motion.div
           variants={fadeIn("down", 0.2)}

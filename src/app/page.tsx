@@ -102,7 +102,7 @@ export default async function Home() {
   const projectsTopData = await fetchProjectsTopData();
 
   return (
-    <div className=" w-full h-full flex flex-col justify-center overflow-y-hidden">
+    <div className=" w-full h-full flex flex-col justify-center overflow-x-hidden">
       <HeroMain heroData={heroData} />
       <AboutMeMain aboutMeData={aboutMeData} />
       <SkillMain skillsData={skillsData} />

@@ -39,6 +39,9 @@
   body {
     @apply bg-dark-brown;
   }
+  html {
+    @apply scroll-smooth;
+  }
 }
 
 body {
@@ -50,6 +53,14 @@ html {
 }
 .special {
   font-family: var(--font-nunito), sans-serif;
+}
+
+#about,
+#projects,
+#experience,
+#skills,
+#contact {
+  scroll-margin-top: 120px;
 }
 
 #impressum {

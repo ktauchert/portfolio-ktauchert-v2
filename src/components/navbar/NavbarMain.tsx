@@ -5,9 +5,9 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarButton from "./NavbarButton";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-
 const NavbarMain = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [smallScreen, setSmallScreen] = React.useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -16,8 +16,10 @@ const NavbarMain = () => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
         setMenuOpen(true);
+        setSmallScreen(false);
       } else {
         setMenuOpen(false);
+        setSmallScreen(true);
       }
     };
 
@@ -33,7 +35,10 @@ const NavbarMain = () => {
       <nav className="h-20 flex flex-1 justify-between items-center bg-black p-6 rounded-r-full rounded-l-full border-[0.5px] border-orange">
         <NavbarLogo />
         <div className={`${menuOpen ? "block" : "hidden"}`}>
-          <NavbarLinks />
+          <NavbarLinks
+            isSmallScreen={smallScreen}
+            onClick={() => setMenuOpen(false)}
+          />
         </div>
         <NavbarButton />
       </nav>

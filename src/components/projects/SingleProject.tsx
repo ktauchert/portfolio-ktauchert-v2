@@ -65,7 +65,7 @@ const SingleProject = ({
         whileInView={"show"}
         viewport={{ once: false, amount: 0 }}
         title="Click for more info"
-        className={`relative w-[400px] h-[220px] perspective`}
+        className={`relative w-full md:w-[400px] h-[220px] perspective`}
         onClick={() => setIsFlipped(!isFlipped)} // Handle click for mobile
       >
         <div

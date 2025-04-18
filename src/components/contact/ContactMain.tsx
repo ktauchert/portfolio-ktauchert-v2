@@ -9,9 +9,11 @@ import { MdLanguage } from "react-icons/md";
 
 const ContactMain = () => {
   return (
-    <div id="contact" className="max-w-[1280px] mx-auto mt-[120px]">
+    <div id="contact" className="max-w-[1280px] mx-auto mt-[60px]">
       <div className="flex flex-col w-full">
-        <h2 className="text-6xl text-cyan text-center my-10">Contact</h2>
+        <h2 className="text-6xl text-cyan text-center mt-10 md:my-10">
+          Contact
+        </h2>
 
         <div className="flex flex-col md:flex-row gap-10 w-full items-center justify-center my-10">
           <div className="w-full flex items-center justify-center">

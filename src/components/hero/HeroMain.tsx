@@ -12,7 +12,7 @@ type HeroDataType = {
 
 const HeroMain = ({ heroData }: { heroData: HeroDataType }) => {
   return (
-    <div className="w-full flex flex-col items-center md:pt-[200px] pt-[120px] mb-20 overflow-hidden">
+    <div className="w-full flex flex-col items-center lg:pt-[200px] sm:pt-[80px] pt-[120px] mb-20 overflow-hidden">
       <div className="max-w-[1280px] flex flex-col md:flex-row justify-center items-center gap-10 md:gap-0 mb-40 px-5">
         <HeroText
           className="lg:w-1/2 w-full"

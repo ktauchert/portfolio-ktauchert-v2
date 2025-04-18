@@ -1,6 +1,6 @@
 export default [
   {
-    link: "About Me",
+    link: "About",
     section: "about",
   },
   {
@@ -18,5 +18,5 @@ export default [
   {
     link: "Experience",
     section: "experience",
-  }
-]
+  },
+];

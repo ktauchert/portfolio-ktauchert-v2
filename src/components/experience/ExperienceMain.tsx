@@ -32,7 +32,7 @@ type Props = {
 
 const ExperienceMain = ({ experienceTop, experiences }: Props) => {
   return (
-    <div id="experience" className="max-w-[1280px] mx-auto mt-[120px] px-5">
+    <div id="experience" className="max-w-[1280px] mx-auto mt-[40px] px-5">
       <motion.div
         variants={fadeIn("down", 0.2)}
         initial="hidden"

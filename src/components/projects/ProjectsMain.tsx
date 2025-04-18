@@ -35,7 +35,7 @@ const ProjectsMain = ({ projectsTopData, projectsData }: Props) => {
           description={projectsTopData.description}
         />
       </motion.div>
-      <div className="flex flex-col gap-20 max-w-[900px] mx-auto mt-12">
+      <div className="flex flex-col gap-20 max-w-[900px] w-[calc(100%-4rem)] mx-auto mt-12">
         {projectsData
           .sort((project_1, project_2) => project_2.year - project_1.year)
           .map((project, index) => {

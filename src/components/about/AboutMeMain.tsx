@@ -19,7 +19,7 @@ const AboutMeMain = ({ aboutMeData }: Props) => {
   return (
     <div
       id="about"
-      className="flex md:flex-row flex-col gap-12 max-w-[1280px] mx-auto justify-between items-center px-5 mt-[120px]"
+      className="flex md:flex-row flex-col gap-12 max-w-[1280px] mx-auto justify-between items-center px-5 mt-[40px]"
     >
       <motion.div
         variants={fadeIn("right", 0.2)}
