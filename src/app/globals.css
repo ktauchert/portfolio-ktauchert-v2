@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brown: #53423e;
+  --color-light-brown: #465550;
+  --color-dark-brown: #2c2523;
+  --color-black: #1e1917;
+  --color-white: #f1e1d9;
+  --color-cyan: #15d1e9;
+  --color-light-cyan: #88e5f0;
+  --color-dark-cyan: #009fb3;
+  --color-orange: #fb9718;
+  --color-light-orange: #fac27b;
+  --color-dark-orange: #d28422;
+  --color-grey: #626965;
+  --color-light-grey: #978580;
+  --color-dark-grey: #3f4441;
+
+  --shadow-cyan: 0px 0px 10px 0px rgba(21, 209, 233, 0.5);
+  --shadow-cyan-medium: 10px 10px 200px 150px rgba(94, 205, 220, 0.5);
+  --shadow-orange-medium: 10px 10px 200px 150px rgba(240, 189, 79, 0.5);
+  /* --font-josefin-sans: "Josefin Sans", sans-serif;
+  --font-nunito: "Nunito", sans-serif; */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +33,53 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+@layer base {
+  body {
+    @apply bg-dark-brown;
+  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-josefin-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.special {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+#impressum {
+  h5,
+  h4,
+  h3 {
+    @apply font-bold pt-4 pb-2;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+}
+.perspective {
+  perspective: 1000px; /* Creates the 3D effect */
+}
+
+.backface-hidden {
+  backface-visibility: hidden; /* Hides the back side when not flipped */
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg); /* Rotates the card */
+}
+
+.relative .absolute {
+  transform-style: preserve-3d; /* Ensures both sides are in 3D space */
 }
