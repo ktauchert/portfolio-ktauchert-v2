@@ -1,6 +1,4 @@
 import React from "react";
-import skill from "../../helper/skillsMap";
-import skills from "../../helper/skillsMap";
 
 type Props = {
   name: string;
