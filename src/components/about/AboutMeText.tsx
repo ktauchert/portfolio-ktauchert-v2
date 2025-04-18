@@ -9,7 +9,7 @@ type Props = {
 
 const AboutMeText = ({ title, content }: Props) => {
   return (
-    <div className="flex flex-col md:items-start items-center gap-4 text-center md:text-left w-full md:w-1/2">
+    <div className="w-full flex flex-col">
       <h2 className="text-6xl text-cyan mb-10 text-center w-full">{title}</h2>
       <PortableText
         value={content}
@@ -19,7 +19,7 @@ const AboutMeText = ({ title, content }: Props) => {
           ),
           marks: {
             link: ({ children, value }) => {
-                const { href } = value as { href: string };
+              const { href } = value as { href: string };
               return (
                 <a href={href} className="text-blue-500 underline">
                   {children}

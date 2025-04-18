@@ -23,6 +23,16 @@ export default defineType({
       type: "string",
     },
     {
+      name: "description",
+      title: "Description",
+      type: "text",
+    },
+    {
+      name: "subTitle",
+      title: "Sub Title",
+      type: "string",
+    },
+    {
       name: "skills",
       title: "Skills",
       type: "array",

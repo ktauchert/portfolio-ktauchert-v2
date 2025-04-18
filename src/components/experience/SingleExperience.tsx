@@ -1,6 +1,8 @@
 import React from "react";
 import { ExperienceType } from "./ExperienceMain";
 import { PortableText } from "@portabletext/react";
+import * as motion from "motion/react-client";
+import { fadeIn } from "@/utils/variants";
 
 type Props = {
   experience: ExperienceType;
@@ -8,7 +10,13 @@ type Props = {
 
 const SingleExperience = ({ experience }: Props) => {
   return (
-    <div className="md:h-full lg:w-[240px] xl:w-[320px] h-auto w-full border-2 border-orange border-dashed rounded-2xl mt-12 p-4">
+    <motion.div
+      variants={fadeIn("right", 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0 }}
+      className="md:h-full lg:w-[240px] xl:w-[320px] h-auto w-full border-2 border-orange border-dashed rounded-2xl mt-12 p-4"
+    >
       <p className="font-bold text-cyan">{experience.jobtitle}</p>
       <p className="text-orange font-bold">{experience.company}</p>
       <p className="text-light-grey">
@@ -48,7 +56,7 @@ const SingleExperience = ({ experience }: Props) => {
           ),
         }}
       />
-    </div>
+    </motion.div>
   );
 };
 

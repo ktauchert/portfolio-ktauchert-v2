@@ -6,7 +6,7 @@ type Props = {
 
 const AboutMeImage = (props: Props) => {
   return (
-    <div className="w-full md:w-1/2">
+    <div className="">
       <img
         src={props.imageUrl}
         alt="About Me"

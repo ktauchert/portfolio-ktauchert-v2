@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { GiClick } from "react-icons/gi";
+import * as motion from "motion/react-client";
+import { DirectionType, fadeIn } from "@/utils/variants";
 
 type Props = {
   title: string;
@@ -29,7 +31,15 @@ const SingleProject = ({
         align === "left" ? "md:flex-row" : "md:flex-row-reverse"
       } justify-end flex-col`}
     >
-      <div>
+      <motion.div
+        variants={fadeIn(
+          (align === "right" ? "left" : "right") as DirectionType,
+          0.2
+        )}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+      >
         <h2 className="md:text-3xl text-2xl text-orange">{title}</h2>
         <h2
           className={`text-xl font-thin text-white special text-center ${
@@ -48,8 +58,13 @@ const SingleProject = ({
         >
           View <BsArrowUpRightCircleFill />
         </Link>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        variants={fadeIn(align as DirectionType, 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+        title="Click for more info"
         className={`relative w-[400px] h-[220px] perspective`}
         onClick={() => setIsFlipped(!isFlipped)} // Handle click for mobile
       >
@@ -78,7 +93,7 @@ const SingleProject = ({
             <p className="text-lg px-4">{description}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const FooterMain = () => {
       <div className="mx-auto h-[1px] bg-light-grey mt-24 w-[calc(100%-20px)]"></div>
       <div className="flex flex-col-reverse md:flex-row justify-between  items-center my-2 px-5">
         <p className="text-3xl text-light-grey special">Karsten Tauchert</p>
-        <ul className="flex flex-row gap-10 md:gap-4 my-2 md:my-0 ">
+        <ul className="flex flex-row gap-6 md:gap-4 my-2 md:my-0 ">
           {links.map((link) => (
             <li key={link.section} className="text-white text-lg">
               <Link

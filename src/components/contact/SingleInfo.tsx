@@ -11,7 +11,7 @@ const SingleInfo = ({ text, Image }: Props) => {
       <div>
         <Image className="text-3xl text-white" />
       </div>
-      <p className="text-2xl text-white">{text}</p>
+      <p className="text-2xl text-white w-[300px]">{text}</p>
     </div>
   );
 };

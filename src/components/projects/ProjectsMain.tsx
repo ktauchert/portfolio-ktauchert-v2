@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectText from "./ProjectText";
 import SingleProject from "./SingleProject";
+import * as motion from "motion/react-client";
+import { fadeIn } from "@/utils/variants";
 
 export type ProjectTopDataType = {
   title: string;
@@ -22,10 +24,17 @@ type Props = {
 const ProjectsMain = ({ projectsTopData, projectsData }: Props) => {
   return (
     <div id="projects" className="max-w-[1280px] mx-auto px-4 mt-[120px]">
-      <ProjectText
-        title={projectsTopData.title}
-        description={projectsTopData.description}
-      />
+      <motion.div
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+      >
+        <ProjectText
+          title={projectsTopData.title}
+          description={projectsTopData.description}
+        />
+      </motion.div>
       <div className="flex flex-col gap-20 max-w-[900px] mx-auto mt-12">
         {projectsData
           .sort((project_1, project_2) => project_2.year - project_1.year)
