@@ -89,7 +89,7 @@ const SingleProject = ({
           </div>
 
           {/* Back Side */}
-          <div className="absolute w-full h-full bg-orange text-white flex flex-col justify-center items-center rounded-xl backface-hidden rotate-y-180">
+          <div className="absolute w-full h-full bg-light-brown text-white flex flex-col justify-center items-center rounded-xl backface-hidden rotate-y-180">
             <p className="text-lg px-4">{description}</p>
           </div>
         </div>
