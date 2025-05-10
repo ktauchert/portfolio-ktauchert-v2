@@ -14,7 +14,7 @@ const fetchHeroData = async () => {
     "imageUrl": image.asset->url
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 
@@ -25,7 +25,7 @@ const fetchAboutMeData = async () => {
     "imageUrl": image.asset->url
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 
@@ -37,7 +37,7 @@ const fetchSkillsData = async () => {
     "imageUrl": image.asset->url
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 const fetchExperienceTopData = async () => {
@@ -53,7 +53,7 @@ const fetchExperienceTopData = async () => {
     date
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 const fetchExperienceData = async () => {
@@ -65,7 +65,7 @@ const fetchExperienceData = async () => {
     content
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 const fetchProjectsTopData = async () => {
@@ -74,7 +74,7 @@ const fetchProjectsTopData = async () => {
     description
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 const fetchProjectsData = async () => {
@@ -86,7 +86,7 @@ const fetchProjectsData = async () => {
     link
   }`;
   const params = { lang: "en" };
-  const data = await client.fetch(query, params);
+  const data = await client.fetch(query, params, { next: { revalidate: 300 } });
   return data;
 };
 

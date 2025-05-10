@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import Cat from "../logo/CatLogo";
 import { MdLanguage } from "react-icons/md";
+import MailboxScene from "../models/MailboxScene";
 
 const ContactMain = () => {
   return (
@@ -17,12 +18,13 @@ const ContactMain = () => {
 
         <div className="flex flex-col md:flex-row gap-10 w-full items-center justify-center my-10">
           <div className="w-full flex items-center justify-center">
-            <img
+            <MailboxScene />
+            {/* <img
               className="w-[160px] h-[160px]"
               loading="lazy"
               src="/email-image.png"
               alt="Contact"
-            />
+            /> */}
           </div>
           <div className="w-full flex gap-4 flex-col">
             <SingleInfo text="Potsdam, Germany" Image={IoLocation} />

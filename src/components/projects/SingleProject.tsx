@@ -55,8 +55,9 @@ const SingleProject = ({
           className={`text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer justify-self-center ${
             align === "left" ? "md:justify-self-end" : "md:justify-self-start"
           }`}
+          title="Click to go to site or repository/info"
         >
-          View <BsArrowUpRightCircleFill />
+          More <BsArrowUpRightCircleFill />
         </Link>
       </motion.div>
       <motion.div
@@ -75,9 +76,9 @@ const SingleProject = ({
         >
           {/* Front Side */}
           <div className="absolute w-full h-full backface-hidden">
-            <div className="w-full h-full bg-orange opacity-40 absolute top-0 left-0 hover:opacity-0 transition-all duration-500 md:block sm:hidden rounded-xl">
-              <div className="absolute bottom-4 right-4 bg-orange p-2 rounded-full cursor-pointer">
-                <GiClick className="text-light-grey text-2xl" />
+            <div className="w-full h-full bg-orange/20  absolute top-0 left-0 hover:opacity-0 transition-all duration-500 md:block sm:hidden rounded-xl">
+              <div className="absolute bottom-4 right-4   p-2 rounded-full cursor-pointer">
+                <GiClick className="text-orange text-2xl" />
               </div>
             </div>
             <img
