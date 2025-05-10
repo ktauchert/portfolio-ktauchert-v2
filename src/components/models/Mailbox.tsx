@@ -7,7 +7,6 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
-import { tr } from "motion/react-client";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -55,5 +54,5 @@ export function Mailbox(props: React.ComponentProps<"group">) {
     </group>
   );
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 useGLTF.preload;
