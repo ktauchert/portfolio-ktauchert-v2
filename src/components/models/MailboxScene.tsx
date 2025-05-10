@@ -1,17 +1,13 @@
 "use client";
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-  PerspectiveCamera,
-  Environment,
-} from "@react-three/drei";
+import { PerspectiveCamera, Environment } from "@react-three/drei";
 import { Mailbox } from "./Mailbox";
 
 const MailboxScene = () => {
   return (
     <div className="w-full h-[200px]">
       <Canvas shadows>
-
         {/* Camera */}
         <PerspectiveCamera makeDefault position={[0, 1.7, 3]} fov={70} />
 
@@ -25,16 +21,14 @@ const MailboxScene = () => {
           shadow-mapSize-height={1024}
         />
 
-
         {/* Environment and scene */}
-        <Environment preset="city" />
+        <Environment preset="sunset" />
 
         {/* Mailbox with loading suspense */}
         <Suspense fallback={null}>
           <group position={[0, 0.7, 0]}>
             <Mailbox position={[0, 0, 0]} />
           </group>
-
         </Suspense>
 
         {/* Floor */}

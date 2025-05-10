@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {
   text: string;
-  Image: React.ElementType; // React component type
+  Image: React.ComponentType<{ className?: string }>; // React component type with className prop
 };
 
 const SingleInfo = ({ text, Image }: Props) => {

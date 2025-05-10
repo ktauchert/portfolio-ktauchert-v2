@@ -25,7 +25,7 @@ export function Mailbox(props: React.ComponentProps<"group">) {
   const ref = useRef<THREE.Group>(null);
   useFrame((state) => {
     if (ref.current && hovering) {
-      ref.current.rotation.y += state.clock.getElapsedTime() * 0.00002;
+      ref.current.rotation.y += state.clock.getElapsedTime() * 0.0001;
       // ref.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 1;
     }
   });
