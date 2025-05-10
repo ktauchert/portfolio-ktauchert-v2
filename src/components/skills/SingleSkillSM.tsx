@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {
   name: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   index: number;
 };
 const SingleSkillSM = (props: Props) => {
