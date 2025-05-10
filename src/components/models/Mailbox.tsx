@@ -23,9 +23,9 @@ export function Mailbox(props: React.ComponentProps<"group">) {
   const { nodes, materials } = useGLTF("/Mailbox.glb") as unknown as GLTFResult;
 
   const ref = useRef<THREE.Group>(null);
-  useFrame((state) => {
+  useFrame(() => {
     if (ref.current && hovering) {
-      ref.current.rotation.y += state.clock.getElapsedTime() * 0.0001;
+      ref.current.rotation.y += 0.005;
       // ref.current.position.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 1;
     }
   });
