@@ -56,7 +56,7 @@ async function getProject(slug: string) {
   return project;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<any> {
+export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const project = await getProject(slug);
 
