@@ -83,7 +83,8 @@ const fetchProjectsData = async () => {
     year,
     description,
     "imageUrl": image.asset->url,
-    link
+    link,
+    slug,
   }`;
   const params = { lang: "en" };
   const data = await client.fetch(query, params, { next: { revalidate: 300 } });

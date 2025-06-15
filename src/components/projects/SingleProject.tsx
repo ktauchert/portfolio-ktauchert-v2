@@ -13,6 +13,9 @@ type Props = {
   imageUrl: string;
   link: string;
   align: string;
+  slug: {
+    current: string;
+  };
 };
 
 const SingleProject = ({
@@ -20,8 +23,8 @@ const SingleProject = ({
   description,
   year,
   imageUrl,
-  link,
   align,
+  slug,
 }: Props) => {
   const [isFlipped, setIsFlipped] = useState(false); // For mobile click handling
 
@@ -49,8 +52,8 @@ const SingleProject = ({
           {year}
         </h2>
         <Link
-          href={link ?? "#"}
-          target="_blank"
+          href={`/project/${slug.current}`}
+          // target="_blank"
           rel="noopener noreferrer"
           className={`text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer justify-self-center ${
             align === "left" ? "md:justify-self-end" : "md:justify-self-start"

@@ -14,6 +14,7 @@ export type ProjectDataType = {
   description: string;
   imageUrl: string;
   link: string;
+  slug: { current: string };
 };
 
 type Props = {
@@ -48,6 +49,7 @@ const ProjectsMain = ({ projectsTopData, projectsData }: Props) => {
                 description={project.description}
                 imageUrl={project.imageUrl}
                 link={project.link}
+                slug={project.slug}
                 align={align}
               />
             );
