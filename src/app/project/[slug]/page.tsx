@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { notFound } from "next/navigation";
-import { PortableTextBlock } from "@portabletext/react";
 import PortableTextWrapper from "@/components/PortableTextWrapper";
+import { PortableTextBlock } from "@portabletext/types";
 
-// Update interface to reflect the block content type for problem
+// Update interface with proper PortableTextBlock type
 interface ProjectDetail {
   title: string;
   description: string;
@@ -14,15 +14,20 @@ interface ProjectDetail {
   galleryImages: string[];
   link: string;
   githubLink: string;
-  problem: PortableTextBlock[]; // Using the proper Portable Text type
+  problem: PortableTextBlock[];
   duration: string;
   role: string;
   technologies: string[];
   challenges: {
-    challenge: PortableTextBlock[]; // Using the proper Portable Text type
-    solution: PortableTextBlock[]; // Using the proper Portable Text type
+    challenge: PortableTextBlock[];
+    solution: PortableTextBlock[];
   }[];
   features: string[];
+}
+
+// Use specific Next.js types for page props
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
 // Function to fetch project data by slug
@@ -48,20 +53,12 @@ async function getProject(slug: string) {
     next: { revalidate: 300 },
   });
 
-  if (!project) {
-    return null;
-  }
-
   return project;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const paramsData = await params;
-  const project = await getProject(paramsData.slug);
+export async function generateMetadata({ params }: PageProps): Promise<any> {
+  const { slug } = await params;
+  const project = await getProject(slug);
 
   if (!project) {
     return {
@@ -88,13 +85,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const paramsData = await params;
-  const project = await getProject(paramsData.slug);
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params;
+  const project = await getProject(slug);
 
   if (!project) {
     notFound();
@@ -110,7 +103,7 @@ export default async function ProjectPage({
           fill
           style={{ objectFit: "cover" }}
           priority
-          className="brightness-[0.7] "
+          className="brightness-[0.7]"
         />
         <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
           <div className="bg-black/50 p-6 backdrop-blur-sm rounded-lg">
