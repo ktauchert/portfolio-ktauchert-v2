@@ -60,7 +60,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
-  const project = await getProject(params.slug);
+  const paramsData = await params;
+  const project = await getProject(paramsData.slug);
 
   if (!project) {
     return {
@@ -92,8 +93,8 @@ export default async function ProjectPage({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
-  const project = await getProject(slug);
+  const paramsData = await params;
+  const project = await getProject(paramsData.slug);
 
   if (!project) {
     notFound();
