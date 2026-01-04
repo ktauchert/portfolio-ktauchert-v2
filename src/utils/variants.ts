@@ -13,11 +13,11 @@ export const fadeIn = (direction: DirectionType, delay: DelayType) => {
       x: 0,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: "tween" as const,
         duration: 0.5,
         delay: delay,
         ease: [0.25, 0.25, 0.25, 0.75],
       },
     },
-  };
+  } as const;
 };
