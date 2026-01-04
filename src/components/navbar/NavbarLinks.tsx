@@ -2,11 +2,12 @@
 import Link from "next/link";
 
 const links = [
-  { link: "About Me", section: "about" },
-  { link: "Skills", section: "skills" },
-  { link: "Experience", section: "experience" },
-  { link: "Projects", section: "projects" },
-  { link: "Contact", section: "contact" },
+  { link: "About Me", section: "about", isExternal: false },
+  { link: "Skills", section: "skills", isExternal: false },
+  { link: "Experience", section: "experience", isExternal: false },
+  { link: "Projects", section: "projects", isExternal: false },
+  // { link: "Blog", section: "/blog", isExternal: true }, // Hidden until ready
+  { link: "Contact", section: "contact", isExternal: false },
 ];
 
 const NavbarLinks = ({
@@ -29,7 +30,7 @@ const NavbarLinks = ({
           <Link
             onClick={handleClick}
             className="text-white text-xl cursor-pointer hover:text-cyan transition-all duration-500 ease-in-out"
-            href={`/#${link.section}`}
+            href={link.isExternal ? link.section : `/#${link.section}`}
           >
             {link.link}
           </Link>

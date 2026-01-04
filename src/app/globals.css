@@ -94,3 +94,11 @@ html {
 .relative .absolute {
   transform-style: preserve-3d; /* Ensures both sides are in 3D space */
 }
+
+/* Line clamp utilities for blog cards */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

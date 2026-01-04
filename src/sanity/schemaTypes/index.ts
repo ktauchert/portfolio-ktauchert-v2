@@ -6,7 +6,17 @@ import experiencetop from "./experiencetop";
 import experience from "./experience";
 import projects from "./projects";
 import projecttop from "./projecttop";
+import blog from "./blog";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, about, skills, experiencetop, experience, projecttop, projects],
+  types: [
+    hero,
+    about,
+    skills,
+    experiencetop,
+    experience,
+    projecttop,
+    projects,
+    blog,
+  ],
 };
