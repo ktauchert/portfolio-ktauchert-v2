@@ -19,9 +19,9 @@ interface BlogPost {
 }
 
 interface BlogPageProps {
-  searchParams: {
+  searchParams: Promise<{
     sort?: "newest" | "oldest" | "updated-newest" | "updated-oldest";
-  };
+  }>;
 }
 
 async function getBlogPosts(
@@ -65,8 +65,8 @@ async function getBlogPosts(
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const params = await searchParams;
-  const sortBy = params.sort || "newest";
+  const { sort } = await searchParams;
+  const sortBy = sort || "newest";
   const blogPosts = await getBlogPosts("en", sortBy);
 
   return (
