@@ -7,7 +7,7 @@ interface ProjectData {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://ktauchert.de";
+  const baseUrl = "https://www.ktauchert.de";
 
   // Fetch all projects
   const projects = await client.fetch<ProjectData[]>(

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/studio/", "/studio/*"],
       },
     ],
-    sitemap: "https://ktauchert.de/sitemap.xml",
+    sitemap: "https://www.ktauchert.de/sitemap.xml",
   };
 }
