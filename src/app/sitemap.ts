@@ -1,11 +1,16 @@
 import { MetadataRoute } from "next";
 import { client } from "@/sanity/lib/client";
 
+interface ProjectData {
+  slug: string;
+  _updatedAt: string;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://ktauchert.de";
 
   // Fetch all projects
-  const projects = await client.fetch(
+  const projects = await client.fetch<ProjectData[]>(
     `*[_type == "projects"]{ "slug": slug.current, _updatedAt }`,
     {},
     { next: { revalidate: 3600 } }
@@ -28,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   // Dynamic project routes
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project: any) => ({
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${baseUrl}/project/${project.slug}`,
     lastModified: new Date(project._updatedAt),
     changeFrequency: "monthly" as const,
