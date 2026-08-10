@@ -1,24 +1,26 @@
+import { FaNodeJs, FaPhp, FaPython, FaReact } from "react-icons/fa";
 import {
-  FaCss3Alt,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaSass,
-} from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiNextdotjs, SiTypescript, SiBlender } from "react-icons/si";
+  SiCypress,
+  SiDocker,
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiSvelte,
+  SiTypescript,
+} from "react-icons/si";
+
 const skills = [
-  { name: "html", icon: FaHtml5 },
-  { name: "css", icon: FaCss3Alt },
-  { name: "js", icon: FaJs },
-  { name: "typescript", icon: SiTypescript },
-  { name: "react", icon: FaReact },
-  { name: "nextjs", icon: SiNextdotjs },
-  { name: "tailwind", icon: RiTailwindCssFill },
-  { name: "sass", icon: FaSass },
-  { name: "figma", icon: FaFigma },
-  { name: "blender", icon: SiBlender },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: FaReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "SvelteKit", icon: SiSvelte },
+  { name: "Node.js", icon: FaNodeJs },
+  { name: "PHP", icon: FaPhp },
+  { name: "Python", icon: FaPython },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "Docker", icon: SiDocker },
+  { name: "Cypress", icon: SiCypress },
+  { name: "OpenAI", icon: SiOpenai },
 ];
 
 export default skills;

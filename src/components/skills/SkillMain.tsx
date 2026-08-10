@@ -5,21 +5,10 @@ import { fadeIn } from "@/utils/variants";
 import SkillsText from "./SkillsText";
 import AllSkillsSM from "./AllSkillsSM";
 import SubSkills from "./SubSkills";
-export type SkillKeys =
-  | "html"
-  | "css"
-  | "js"
-  | "typescript"
-  | "react"
-  | "nextjs"
-  | "tailwind"
-  | "sass"
-  | "figma"
-  | "blender";
 export type SkillsData = {
   title: string;
   description: string;
-  skills: SkillKeys[];
+  skills: string[];
   imageUrl: string;
 };
 
